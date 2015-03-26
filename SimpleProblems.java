@@ -25,16 +25,17 @@ public class SimpleProblems {
 	
 	static void problem2() {
 		int newi = 0;
-		int sum = 0;
-		int i = 1;
+		int sum = 2;
+		int i = 2;
+		int prevFib = 1;
 		
-		while (i <= 4000) {
-			newi += i;
-			if (i == 1)
-				i += newi;
+		while (i <= 4000000) {
+			newi = prevFib + i;
+			prevFib = i;
+			i = newi;
 			
 			//add every odd fib to the total sum
-			if (newi % 2 == 0 || newi == 1)
+			if (newi % 2 == 0)
 				sum += i;
 		}
 		
@@ -46,8 +47,7 @@ public class SimpleProblems {
 			return 1;
 		} else if (fib == 2) {
 			return 2;
-		} 
-		
-		return problem2(fib - 1) + problem2(fib - 2);*/
+		} else 
+			return problem2(fib - 1) + problem2(fib - 2);*/
 	}
 }
