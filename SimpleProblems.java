@@ -75,7 +75,7 @@ public class SimpleProblems {
 			//if the current i is a prime number, check to see if it is a prime factor of the
 			//number
 			if (isComposite[i] == false) {
-				if (number % i == 0)
+				if (number % i == 0 && number / i != 1)
 					return problem3Rec((number/i), upperLimit, isComposite);
 					//break;
 			}
